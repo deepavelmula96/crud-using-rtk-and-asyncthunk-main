@@ -92,14 +92,14 @@ export const userDetail = createSlice({
     error: null,
     searchData: [],
   },
-
+// reducers=> used to handle actions if api is not required
   reducers: {
     searchUser: (state, action) => {
       console.log(action.payload);
       state.searchData = action.payload;
     },
   },
-
+//extraReducers=> used to handle the promises i.e API's
   extraReducers: {
     [createUser.pending]: (state) => {
       state.loading = true;
